@@ -3,51 +3,74 @@
 @section('title', 'Register - RateFlux')
 
 @section('content')
-<div class="container d-flex justify-content-center mt-5">
-    <div class="card p-4 shadow-lg" style="width: 450px; background: #0d0f14; border: 1px solid #222;">
+ <main class="container py-5">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 col-lg-5">
+                <div class="card-custom p-4">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold">
+                            Create Your <span class="gradient-text">RateFlux</span> Account
+                        </h2>
+                        <p class="text-soft mt-2">Join our community of honest reviewers</p>
+                    </div>
 
-        <h2 class="text-light text-center mb-4 fw-bold">
-            Create Your <span class="text-warning">RateFlux</span> Account
-        </h2>
+                    <form action="{{ route('register') }}" method="POST">
+                        @csrf
 
-        <form action="{{ route('register') }}" method="POST">
-            @csrf
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium">Full Name</label>
+                            <input type="text" name="name" class="form-control" 
+                                   placeholder="Enter your full name" required>
+                        </div>
 
-            <div class="mb-3">
-                <label class="text-secondary mb-1">Full Name</label>
-                <input type="text" name="name" class="form-control bg-dark text-light border-secondary"
-                       placeholder="Enter name" required>
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium">Email</label>
+                            <input type="email" name="email" class="form-control" 
+                                   placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium">Password</label>
+                            <input type="password" name="password" class="form-control" 
+                                   placeholder="Create a password" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label text-dark fw-medium">Confirm Password</label>
+                            <input type="password" name="password_confirmation" 
+                                   class="form-control" placeholder="Confirm your password" required>
+                        </div>
+
+                        <button class="btn btn-primary-custom w-100 py-2 fw-semibold">
+                            <i class="fas fa-user-plus me-2"></i>Create Account
+                        </button>
+
+                        <div class="text-center mt-4">
+                            <p class="text-soft mb-0">
+                                Already have an account?
+                                <a href="{{ route('login') }}" class="text-decoration-none fw-medium gradient-text">Login here</a>
+                            </p>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-top">
+                            <div class="text-center">
+                                <p class="text-soft small mb-3">Or sign up with</p>
+                                <div class="d-flex gap-3 justify-content-center">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fab fa-google"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <div class="mb-3">
-                <label class="text-secondary mb-1">Email</label>
-                <input type="email" name="email" class="form-control bg-dark text-light border-secondary"
-                       placeholder="Enter email" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="text-secondary mb-1">Password</label>
-                <input type="password" name="password" class="form-control bg-dark text-light border-secondary"
-                       placeholder="Create password" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="text-secondary mb-1">Confirm Password</label>
-                <input type="password" name="password_confirmation" 
-                       class="form-control bg-dark text-light border-secondary"
-                       placeholder="Confirm password" required>
-            </div>
-
-            <button class="btn w-100 mt-3" style="background:#7D2AE8; color:white;">
-                Create Account
-            </button>
-
-            <p class="text-center text-secondary mt-3">
-                Already have an account?
-                <a href="{{ route('login') }}" class="text-warning">Login</a>
-            </p>
-
-        </form>
-    </div>
-</div>
+        </div>
+    </main>
 @endsection

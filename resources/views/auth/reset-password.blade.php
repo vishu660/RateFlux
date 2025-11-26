@@ -1,47 +1,39 @@
-@extends('layouts.app')
+<x-guest-layout>
+    <form method="POST" action="{{ route('password.store') }}">
+        @csrf
 
-@section('title', 'Reset Password - RateFlux')
+        <!-- Password Reset Token -->
+        <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-@section('content')
-<div class="container d-flex justify-content-center mt-5">
+        <!-- Email Address -->
+        <div>
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
 
-    <div class="card p-4 shadow-lg"
-         style="width: 420px; background: #0d0f14; border: 1px solid #222;">
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Password')" />
+            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
 
-        <h2 class="text-light text-center mb-4 fw-bold">
-            Create New <span class="text-warning">Password</span>
-        </h2>
+        <!-- Confirm Password -->
+        <div class="mt-4">
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
-        <form method="POST" action="{{ route('password.store') }}">
-            @csrf
+            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required autocomplete="new-password" />
 
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
 
-            <div class="mb-3">
-                <label class="text-secondary mb-1">Email</label>
-                <input type="email" name="email" class="form-control bg-dark text-light border-secondary"
-                       value="{{ old('email', $request->email) }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="text-secondary mb-1">New Password</label>
-                <input type="password" name="password" class="form-control bg-dark text-light border-secondary"
-                       placeholder="New password" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="text-secondary mb-1">Confirm Password</label>
-                <input type="password" name="password_confirmation"
-                       class="form-control bg-dark text-light border-secondary"
-                       placeholder="Confirm password" required>
-            </div>
-
-            <button class="btn w-100 mt-3"
-                    style="background:#7D2AE8; color:white;">
-                Reset Password
-            </button>
-
-        </form>
-    </div>
-</div>
-@endsection
+        <div class="flex items-center justify-end mt-4">
+            <x-primary-button>
+                {{ __('Reset Password') }}
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout>

@@ -3,10 +3,10 @@
         <div class="brand">RateFlux</div>
 
         <div class="d-flex align-items-center">
-            <a href="/" class="me-4 active">Home</a>
-            <a href="#" class="me-4">Stores</a>
-            <a href="#" class="me-4">Products</a>
-            <a href="#" class="me-4">Reviews</a>
+            <a href="{{route('home')}}" class="me-4 active">Home</a>
+            <a href="{{route('stores')}}" class="me-4">Stores</a>
+            <a href="{{route('products')}}" class="me-4">Products</a>
+            <a href="{{route('reviews')}}" class="me-4">Reviews</a>
             <a href="/login" class="me-4">Login</a>
 
             <div class="search-box ms-3">
