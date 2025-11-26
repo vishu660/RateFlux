@@ -1,0 +1,267 @@
+/* ===========================
+   RateFlux — Global Styles
+   =========================== */
+
+:root {
+    --bg-main: #ffffff;
+    --bg-nav: #ffffff;
+    --bg-card: #f8fafc;
+    --text-dark: #1e293b;
+    --text-soft: #64748b;
+    --primary-mint: #0d9488;
+    --primary-coral: #ef4444;
+    --accent-purple: #8b5cf6;
+    --accent-amber: #f59e0b;
+    --border-light: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --shadow-hover: rgba(0, 0, 0, 0.12);
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-dark);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+
+.custom-nav {
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 4px 12px var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-mint), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav a {
+    color: var(--text-soft);
+    font-weight: 500;
+    transition: 0.3s;
+    margin-right: 18px;
+}
+
+nav a:hover {
+    color: var(--primary-mint);
+}
+
+nav a.active {
+    color: var(--primary-mint);
+    font-weight: 600;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-soft);
+}
+
+.search-box input {
+    padding-left: 35px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+
+.hero-section {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.05), rgba(139, 92, 246, 0.05));
+    border-radius: 24px;
+    padding: 80px 40px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-mint), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-soft);
+}
+
+.search-hero {
+    max-width: 600px;
+    margin: 25px auto;
+    position: relative;
+}
+
+.search-hero input {
+    border-radius: 50px;
+    padding: 16px 25px 16px 50px;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-light);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.search-hero i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-soft);
+}
+
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--primary-mint), var(--accent-purple));
+    color: white;
+    border-radius: 10px;
+    padding: 12px 30px;
+    transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(13, 148, 136, 0.3);
+}
+
+/* ===========================
+   CARDS
+   =========================== */
+
+.card-custom {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: 0.3s;
+}
+
+.card-custom:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px var(--shadow-hover);
+}
+
+/* ===========================
+   PRODUCTS
+   =========================== */
+
+.product-img {
+    height: 200px;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    color: var(--text-soft);
+}
+
+/* Ratings */
+.stars {
+    color: var(--accent-amber);
+}
+
+/* ===========================
+   STORES
+   =========================== */
+
+.store-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-mint), var(--accent-purple));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   FEATURES
+   =========================== */
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(13, 148, 136, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-mint);
+    font-size: 1.8rem;
+}
+
+/* ===========================
+   TESTIMONIALS
+   =========================== */
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-mint), var(--accent-purple));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+.custom-footer {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-light);
+}
+
+.custom-footer a {
+    color: var(--text-soft);
+    transition: 0.3s;
+}
+
+.custom-footer a:hover {
+    color: var(--primary-mint);
+}
+
+.newsletter-btn {
+    background: linear-gradient(135deg, var(--primary-mint), var(--accent-purple));
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    nav a {
+        margin-right: 10px;
+    }
+}
